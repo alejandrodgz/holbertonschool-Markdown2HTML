@@ -14,7 +14,7 @@ def main():
         exit(1)
 
     if not path.exists(argv[1]):
-        stderr.write("Missing {}".format(argv[1]))
+        stderr.write("Missing {}\n".format(argv[1]))
         exit(1)
 
 if __name__ == '__main__':
