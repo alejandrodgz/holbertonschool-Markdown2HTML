@@ -17,6 +17,8 @@ def main():
         print("Missing {}\n".format(argv[1]))
         exit(1)
 
+    print("")
+    exit(0)
 
 if __name__ == '__main__':
     main()
