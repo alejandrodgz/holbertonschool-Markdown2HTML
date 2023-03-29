@@ -10,7 +10,7 @@ from os import path
 def main():
     # Check if the correct number of arguments have been passed
     if len(argv) < 2:
-        stderr.write('Usage: ./markdown2html.py README.md README.html')
+        stderr.write('Usage: ./markdown2html.py README.md README.html ')
         exit(1)
 
     if not (path.exists(argv[1])):
