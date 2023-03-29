@@ -14,7 +14,7 @@ def main():
         exit(1)
 
     if not path.exists(argv[1]):
-        print("Missing {}".format(argv[1]))
+        print("Missing {}\n".format(argv[1]))
         exit(1)
 
 
