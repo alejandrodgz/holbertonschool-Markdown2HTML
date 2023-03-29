@@ -17,5 +17,14 @@ def main():
         stderr.write("Missing {}\n".format(argv[1]))
         exit(1)
 
+    with open(argv[1], 'r') as f:
+        for line in f:
+            if line[0] == '#':
+                hash_number = line.count('#')
+                heading_text = line[hash_number+1:].strip()
+                with open(argv[2], 'a') as out:
+                    out.writelines(f'<h{hash_number}>{heading_text}</h{hash_number}>\n')
+
+
 if __name__ == '__main__':
     main()
