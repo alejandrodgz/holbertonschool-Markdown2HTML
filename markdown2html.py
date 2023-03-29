@@ -35,6 +35,16 @@ def main():
                     if i >= len(lines) - 1 or lines[i + 1][0] != '-':
                         with open(argv[2], 'a') as out:
                             out.write(f'</ul>\n')
+            elif line[0] == '*':
+                    text_list = line[2:].strip()
+                    if i == 0 or lines[i - 1][0] != '*':
+                        with open(argv[2], 'a') as out:
+                            out.write(f'<ol>\n')
+                    with open(argv[2], 'a')as out:
+                            out.write(f'<li>{text_list}</li>\n')
+                    if i >= len(lines) - 1 or lines[i + 1][0] != '*':
+                        with open(argv[2], 'a') as out:
+                            out.write(f'</ol>\n')
                     
 
 
