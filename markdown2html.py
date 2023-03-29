@@ -9,7 +9,7 @@ from os import path
 
 def main():
     # Check if the correct number of arguments have been passed
-    if len(argv) < 2:
+    if len(argv) < 3:
         stderr.write("Usage: ./markdown2html.py README.md README.html")
         exit(1)
 
