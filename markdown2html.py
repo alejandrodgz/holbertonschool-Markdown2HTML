@@ -13,8 +13,8 @@ def main():
         stderr.write("Usage: ./markdown2html.py README.md README.html\n")
         exit(1)
 
-    if not (path.exists(argv[1])):
-        print("Missing " + argv[1])
+    if not path.exists(argv[1]):
+        print("Missing " + argv[1] + "\n")
         exit(1)
 
 
