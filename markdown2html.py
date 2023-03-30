@@ -8,6 +8,33 @@ from os import path
 
 
 def main():
+    def bold(string):
+        i = 0
+        counter = 0
+        new_string = string
+        for i in range(len(string) - 1):
+            if string[i] == '*' and string[i + 1] == '*':
+                counter += 1
+                if counter == 1:
+                    new_string = new_string.replace('**',"<b>", 1)
+                if counter == 2:
+                    counter = 0
+                    new_string = new_string.replace('**',"</b>", 1)
+        return(new_string)
+    
+    def dunndies(string):
+        i = 0
+        counter = 0
+        new_string = string
+        for i in range(len(string) - 1):
+            if string[i] == '_' and string[i + 1] == '_':
+                counter += 1
+                if counter == 1:
+                    new_string = new_string.replace('__',"<em>", 1)
+                if counter == 2:
+                    counter = 0
+                    new_string = new_string.replace('__',"</em>", 1)
+        return(new_string)
     # Check if the correct number of arguments have been passed
     if len(argv) < 3:
         stderr.write("Usage: ./markdown2html.py README.md README.html\n")
@@ -19,7 +46,8 @@ def main():
 
     with open(argv[1], 'r') as f:
         lines = f.readlines()
-        for i, line in enumerate(lines):
+        for i, line_raw in enumerate(lines):
+            line = bold(dunndies(line_raw))
             if line[0] == '#':
                 hash_number = line.count('#')
                 heading_text = line[hash_number+1:].strip()
@@ -58,10 +86,8 @@ def main():
                     with open(argv[2], 'a') as out:
                             out.write(f'<br/>\n')
                     
-                    
-
-
-
+ 
+        
                     
 
 
