@@ -45,6 +45,20 @@ def main():
                     if i >= len(lines) - 1 or lines[i + 1][0] != '*':
                         with open(argv[2], 'a') as out:
                             out.write(f'</ol>\n')
+            elif line[0].isalpha():
+                if i == 0 or lines[i - 1] == '\n':
+                    with open(argv[2], 'a') as out:
+                            out.write(f'<p>\n')
+                with open(argv[2], 'a')as out:
+                    line_parser = line[:-1] if line[-1] == '\n' else line
+                    out.write(f'{line_parser}\n')
+                if i >= len(lines) - 1 or lines[i + 1] == '\n':
+                        with open(argv[2], 'a') as out:
+                            out.write(f'</p>\n')
+                    
+
+
+
                     
 
 
