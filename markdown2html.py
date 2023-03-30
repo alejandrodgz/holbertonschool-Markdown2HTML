@@ -50,11 +50,14 @@ def main():
                     with open(argv[2], 'a') as out:
                             out.write(f'<p>\n')
                 with open(argv[2], 'a')as out:
-                    line_parser = line[:-1] if line[-1] == '\n' else line
-                    out.write(f'{line_parser}\n')
-                if i >= len(lines) - 1 or lines[i + 1] == '\n':
+                    out.write(f'{line}')
+                if i == len(lines) - 1 or lines[i + 1] == '\n':
                         with open(argv[2], 'a') as out:
                             out.write(f'</p>\n')
+                else:
+                    with open(argv[2], 'a') as out:
+                            out.write(f'<br/>\n')
+                    
                     
 
 
